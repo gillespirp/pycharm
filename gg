@@ -1,0 +1,29 @@
+import pygame, sys
+from pygame.locals import *
+from pygame import mixer
+
+pygame.init()
+mixer.init()
+mixer.music.load(
+        "/Users/Usuario/Downloads/cel_musica/regulares/aa.mp3")
+mixer.music.play(1)
+mixer.music.pause()
+mixer.music.unpause()
+mixer.music.set_volume(0.5)
+print(mixer.music.get_volume())
+
+mixer.music.queue("/Users/Usuario/Downloads/cel_musica/EDEN - drugs.mp3")
+
+
+DISPLAYSURF = pygame.display.set_mode((400, 300))
+pygame.display.set_caption('Hello World!')
+while True: # main game loop
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+
+
+    pygame.display.update()
+
+
